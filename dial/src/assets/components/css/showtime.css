@@ -1,0 +1,12 @@
+.showtime {
+    color: white;
+}
+
+.showtime, h3{
+    color: white;
+}
+
+.showtime, p {
+    color: rgba(255, 255, 255, 0.788);
+    margin:10px;
+}

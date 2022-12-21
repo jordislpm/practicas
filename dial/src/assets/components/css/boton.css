@@ -1,0 +1,16 @@
+.boton, button {
+    font-size: 5px;
+    display: flex;
+    width: 100px;
+    text-align: center;
+    padding: 10px;
+    color: red;
+    margin: 10px;
+
+}
+
+.boton {
+    font-size: 10px;
+    background-color: aqua;
+    color: red;
+}
