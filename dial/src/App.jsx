@@ -1,6 +1,6 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MenuBar from './assets/components/MenuBar';
+import MenuBar from './assets/components/Practica III/MenuBar';
 
 function App(){
   return (
