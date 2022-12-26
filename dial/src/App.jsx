@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MenuBar from './assets/components/Practica III/MenuBar';
-import Boton from './assets/components/Practica III/Boton';
-import Business from './assets/components/Practica III/Business';
+import Secction1 from './assets/components/Practica III/Secction1';
+import Secction2 from './assets/components/Practica III/Secction2';
+import Secction3 from './assets/components/Practica III/Secction3';
+import Footer from './assets/components/Practica III/Footer';
 
 
 
@@ -41,29 +43,34 @@ export default class App extends Component{
           name:"Business for different thinks",
           content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis nam odit odio tenetur quidem laboriosam commodi, est exercitationem cupiditate ea facilis molestiae, nihil, ratione voluptatibus vel enim aliquid unde mollitia."
         }
+      ],
+      img:[
+        {
+          url:"https://batterymachinery.in/wp-content/uploads/2020/08/900X400.jpg"
+        },
+        {
+          url: "https://www.bgcdc.org/wordpress/wp-content/uploads/2020/08/900x400.png"
+        }
       ]
+      
     }
   }
   render(){
     return <div clasName="showtime">
     <MenuBar name="Jordis.dev"/>
-    <Business />
+    <Secction1 businessData={this.state.businessData[0]} img={this.state.img[0]}/>
+    <Secction2/>
+    <Secction3 cards={this.state.cards}/>
+    <Footer/>
+   
+
     </div>
   }
 }
 
 
-function Secction1(props) {
-  return(
-    <div class="row">
-    <div class="col">
-      <Business />
-    </div>
-    <div class="col">
-    <Business/>
-    </div>
-  </div>
-  )
-}
+
+
+
 
 
