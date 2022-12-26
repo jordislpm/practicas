@@ -41,12 +41,11 @@ class ShowTime extends React.Component{
     }
        
     render(){
-        return <div>
+        return <div className='container'>
             <h3>Clock:</h3>
             <p>{this.state.date}</p>
             <p>{this.state.time}</p>
-            <Boton botonClick={this.botonClick} className="btn"/>
-            
+            <Boton botonClick={this.botonClick}/>
         </div>
     }
 }
