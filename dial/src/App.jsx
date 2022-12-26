@@ -58,9 +58,11 @@ export default class App extends Component{
   render(){
     return <div clasName="showtime">
     <MenuBar name="Jordis.dev"/>
+    <div className='container px-8'>
     <Secction1 businessData={this.state.businessData[0]} img={this.state.img[0]}/>
     <Secction2/>
     <Secction3 cards={this.state.cards}/>
+    </div>
     <Footer/>
    
 

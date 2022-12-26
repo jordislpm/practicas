@@ -5,11 +5,11 @@ import Img from './Img';
 
 export default function Secction1(props) {
     return(
-    <div className="row mx-5 mt-3">
-      <div className="col m-4">
+    <div className="row px-0 mx-0">
+      <div className="col my-5 mx-0">
       <Img img={props.img.url}/>
       </div>
-      <div className="col m-4">
+      <div className="col my-5 mx-0">
       <Business {...props.businessData}/>
       </div>
     </div>
