@@ -9,22 +9,22 @@ class ShowTime extends React.Component{
         this.state ={
             time: new Date().toLocaleTimeString(),
             date: new Date().toLocaleDateString(),
-            status: 'start'
+            status: true
         }
         
     }
     botonClick(){
-        if(this.state.status == 'start'){
-            this.state.status = 'stop'
-        } else if(this.state.status == 'stop'){
-            this.state.status = 'start'
+        if(this.state.status == true){
+            this.state.status = false
+        } else if(this.state.status == false){
+            this.state.status = true
         }
 
     }
 
 
     actualizacion(){
-        if(this.state.status == 'start'){ this.setState({
+        if(this.state.status == true){ this.setState({
         time: new Date().toLocaleTimeString(),
         date: new Date().toLocaleDateString()
         });}
