@@ -64,7 +64,6 @@ export default class App extends Component{
     <Secction3 cards={this.state.cards}/>
     </div>
     <Footer/>
-   
 
     </div>
   }
