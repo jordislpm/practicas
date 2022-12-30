@@ -13,11 +13,10 @@ function Tabla(props){
                 <th scope="col">Balance</th>
               </tr>
             </thead>
-            {props.meses.length > 0 && 
             <tbody>
             {props.meses.map((me) => {
               return <Mes 
-              key={me.key}
+              key={`${me.key}`}
               id={me.id}
               Cuota={me.Cuota}
               Capital={me.Capital}
@@ -25,8 +24,6 @@ function Tabla(props){
               Balance={me.Balance}/>
             })}
           </tbody>
-            }
-            
           </table>
         )
     

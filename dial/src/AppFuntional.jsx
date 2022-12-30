@@ -8,7 +8,7 @@ import Notas from './assets/components/Practica IV/Notas';
 
 function AppFuntional (){
 
-
+    const arr = [];
     const[notas,setNotas] = useState([
       {nota:"Los resultados de esta simulación son aproximados.",
         },{
@@ -38,7 +38,7 @@ function AppFuntional (){
         setCuota(e.target.value)
       };
 
-    const [meses,setMeses] = useState([]);
+    const [meses,setMeses] = useState([...arr]);
 
     const createMes = (e)=>{
       e.preventDefault()
@@ -47,8 +47,8 @@ function AppFuntional (){
         let I = (interesAnual/12)/100;
         let interesMensual = (V * I);
         let C = (interesMensual/ (1-(1 + I)**(N * -1))).toFixed(2)
-        let capital = C - interesMensual;
-        let balance = V - capital;
+        let capital = (C - interesMensual).toFixed(2);
+        let balance = (V - capital).toFixed(2);
         let interes = (interesMensual).toFixed(2);
         const interesPorc = (interesMensual / 100).toFixed(2);
        
@@ -66,15 +66,22 @@ function AppFuntional (){
     Balance: balance
      };
   console.log(newMes)
-  setMeses([newMes , ...meses]);
+  arr.push(newMes)
+  
 
   interes = (balance * interesPorc/100).toFixed(2);
   capital = (C - interes).toFixed(2);
   balance = (balance - capital).toFixed(2);
+  if(balance < 0){
+    balance = 0
+  }
       
       }  
-
+      setMeses([...arr]);
 console.log(meses)
+console.log(arr)
+console.log(meses.length)
+console.log(arr.length)
     }
        
 
