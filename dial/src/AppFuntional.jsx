@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from './assets/components/Practica IV/Form';
 import Tabla from './assets/components/Practica IV/Tabla';
 import Notas from './assets/components/Practica IV/Notas';
-
+import Foot from './assets/components/Practica IV/Foot';
 
 
 function AppFuntional (){
@@ -91,7 +91,7 @@ function AppFuntional (){
       <di>
       <h2 className="h2 text-center">Calculadora Financiera de Cuotas de prestamos</h2>
       </di>
-      <div className="row px-0 mx-0">
+      <div className="row mt-3 px-0 mx-0">
       <div className="col my-2 mx-4 bg-dark text-white" >
       <Form 
         cuota={cuota}
@@ -110,6 +110,7 @@ function AppFuntional (){
      
      <div className="bg-dark text-white">
    {meses.length > 0 && <Tabla meses={meses}/>}
+   {meses.length <= 0 && <Foot/>}
    
      </div>
       
