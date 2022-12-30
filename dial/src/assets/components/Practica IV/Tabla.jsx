@@ -3,7 +3,7 @@ import React from 'react';
 import Mes from './Mes';
 function Tabla(props){
 
-    return(<table className="table">
+    return(<table className="table table-dark table-striped m-5 pe-5 ">
             <thead>
               <tr>
                 <th scope="col">#No.</th>
@@ -13,17 +13,20 @@ function Tabla(props){
                 <th scope="col">Balance</th>
               </tr>
             </thead>
+            {props.meses.length > 0 && 
             <tbody>
-              {props.meses.map((me) => {
-                return <Mes 
-                key={me.key}
-                id={me.id}
-                Cuota={me.Cuota}
-                Capital={me.Capital}
-                Interes={me.Interes}
-                Balance={me.Balance}/>
-              })}
-            </tbody>
+            {props.meses.map((me) => {
+              return <Mes 
+              key={me.key}
+              id={me.id}
+              Cuota={me.Cuota}
+              Capital={me.Capital}
+              Interes={me.Interes}
+              Balance={me.Balance}/>
+            })}
+          </tbody>
+            }
+            
           </table>
         )
     

@@ -8,7 +8,7 @@ export default function Form({monto,cuota,interesAnual,handleMonto,handleInteres
   
   
   return(
-        <div className="container-sm">
+        <div className="row d-flex justify-content-between ">
         <form onSubmit={createMes}>
         <div className="mb-3">
         
@@ -40,7 +40,7 @@ export default function Form({monto,cuota,interesAnual,handleMonto,handleInteres
         <input
          value="Calcular"
          type="submit" 
-         className="btn btn-primary"
+         className="btn btn-primary mt-3 m"
         />
         </div>
       </form>
