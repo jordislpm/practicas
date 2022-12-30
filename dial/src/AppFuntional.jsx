@@ -41,7 +41,7 @@ function AppFuntional (){
         const interesPorc = (interesMensual / 100).toFixed(2);
        
         
-  for (let i = 0; i < N; i++) {
+  for (let i = 0; i < cuota; i++) {
 
 
     const newMes ={
