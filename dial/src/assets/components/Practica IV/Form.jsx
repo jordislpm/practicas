@@ -1,23 +1,51 @@
+import React, { useState } from 'react'
 
-export default function Form(){
-    return(
+
+
+export default function Form({monto,cuota,interesAnual,handleMonto,handleInteresAnual,handleCuota,createMes}){
+    
+  
+  
+  
+  return(
         <div className="container-sm">
-        <form>
+        <form onSubmit={createMes}>
         <div className="mb-3">
+        
           <label className="form-label">Monto</label>
-          <input type="number" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-        </div>
-        <div className="mb-3">
-          <label className="form-label">Cuotas</label>
-          <input type="number" className="form-control" id="exampleInputPassword1"/>
-        </div>
-        <div className="mb-3">
+          <input 
+          value={monto} 
+          type="number" 
+          className="form-control" 
+          id="exampleInputEmail1" 
+          aria-describedby="emailHelp"
+          onChange={handleMonto}/>
+        
+          <label className="form-label">Cuota</label>
+          <input 
+          value={cuota} 
+          type="number" 
+          className="form-control" 
+          id="exampleInputPassword1"
+          onChange={handleCuota}/>
+      
           <label className="form-label">interes Anual</label>
-          <input type="number" className="form-control" id="exampleInputPassword1"/>
+          <input 
+          value={interesAnual} 
+          type="number" 
+          className="form-control" 
+          id="exampleInputPassword1"
+          onChange={handleInteresAnual}/>
+         
+        <input
+         value="Calcular"
+         type="submit" 
+         className="btn btn-primary"
+        />
         </div>
-        <button type="submit" className="btn btn-primary">Submit</button>
       </form>
       </div>
     )
 
 }
+
