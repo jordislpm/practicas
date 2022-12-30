@@ -66,7 +66,7 @@ function AppFuntional (){
     Balance: balance
      };
   console.log(newMes)
-  setMeses([newMes,...meses]);
+  setMeses([newMes , ...meses]);
 
   interes = (balance * interesPorc/100).toFixed(2);
   capital = (C - interes).toFixed(2);
@@ -81,11 +81,11 @@ console.log(meses)
     
 
     return(
-    <div className="row justify-content-lg-center">
-      <h2>calculadora financiera de cuota de prestamos</h2>
+    <div className="row justify-content-lg-center bg-light text-dark">
+      <h2 className="h2">calculadora financiera de cuota de prestamos</h2>
 
       <div className="row px-0 mx-0">
-      <div className="col my-5 mx-0">
+      <div className="col my-5 mx-4 bg-dark text-white" >
       <Form 
         cuota={cuota}
         monto={monto} 
@@ -95,15 +95,15 @@ console.log(meses)
         handleCuota={handleCuota}
         handleInteresAnual={handleInteresAnual}/>
       </div>
-      <div className="col my-5 mx-0">
+      <div className="col my-5 mx-4 bg-light text-dark">
       <Notas notas={notas}/>
       </div>
     </div>
 
      
-     <div>
+     <div className="bg-dark text-white">
    {meses.length > 0 && <Tabla meses={meses}/>}
-   {meses.length < 1 && <h4>calcula tu prestamo</h4>}
+   
      </div>
       
       
