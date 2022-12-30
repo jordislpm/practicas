@@ -15,7 +15,6 @@ function Tabla(props){
             </thead>
             <tbody>
               {props.meses.map((me) => {
-                console.log(props.meses.length)
                 return <tr key={me.key}>
                 <th>{me.id}</th>
                 <td>{me.Cuota}</td>
@@ -45,14 +44,3 @@ function Mes (props){
 }
 
 export default Tabla
-
-
-
-{/* <tr>
-<th>{props.meses.id}</th>
-<th>{props.meses.Cuota}</th>
-<th>{props.meses.Capital}</th>
-<th>{props.meses.Interes}</th>
-<th>{props.meses.Balance}</th>
-
-</tr> */}

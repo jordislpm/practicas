@@ -26,7 +26,7 @@ function AppFuntional (){
         setCuota(e.target.value)
       };
 
-    const [meses, setMeses] = useState([]);
+    const [meses,setMeses] = useState([]);
 
     const createMes = (e)=>{
       e.preventDefault()
@@ -82,7 +82,7 @@ console.log(meses)
         handleInteresAnual={handleInteresAnual}/>
       </div>
      <div>
-   {meses.length >= 0 && <Tabla meses={meses}/>}
+   {meses.length >= 1 && <Tabla meses={meses}/>}
    {meses.length < 1 && <h4>calcula tu prestamo</h4>}
      </div>
       
