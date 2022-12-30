@@ -2,13 +2,13 @@
 
 function Mes (props){
     return(
-    <tr>
-        <th>{props.id}</th>
-        <td>{props.cuota}</td>
-        <td>{props.capital}</td>
-        <td>{props.interes}</td>
-        <td>{props.balance}</td>
-      </tr>
+      <tr>
+      <th>{props.id}</th>
+      <td>{props.Cuota}</td>
+      <td>{props.Capital}</td>
+      <td>{props.Interes}</td>
+      <td>{props.Balance}</td>
+    </tr>
     )
 }
 

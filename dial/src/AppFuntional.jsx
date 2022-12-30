@@ -49,9 +49,9 @@ function AppFuntional (){
     key: `${i+1}`,
     Mes:`${i+1}`,
     Cuota: `${C}`,
-    Capital:`${capital}`,
-    Interes:`${interes}`,
-    Balance: `${balance}`
+    Capital: capital,
+    Interes: interes,
+    Balance: balance
      };
   console.log(newMes)
   setMeses([... meses, newMes]);
