@@ -6,7 +6,7 @@ function Tabla(props){
     return(<table className="table table-dark table-striped m-5 pe-5 ">
             <thead>
               <tr>
-                <th scope="col">#No.</th>
+                <th scope="col">#Mes No.</th>
                 <th scope="col">Cuota</th>
                 <th scope="col">Capital</th>
                 <th scope="col">Interes</th>
