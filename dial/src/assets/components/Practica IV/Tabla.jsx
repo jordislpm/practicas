@@ -3,7 +3,7 @@ import React from 'react';
 import Mes from './Mes';
 function Tabla(props){
 
-    return(<table className="table table-dark table-striped m-5 pe-5 ">
+    return(<table className="table table-dark table-striped border border-primary">
             <thead>
               <tr>
                 <th scope="col">#Mes No.</th>

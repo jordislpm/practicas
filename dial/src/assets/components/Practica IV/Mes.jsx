@@ -2,7 +2,7 @@
 
 function Mes (props){
     return(
-      <tr>
+      <tr className="me-0 pe-0">
       <th>{props.id}</th>
       <td>{props.Cuota}</td>
       <td>{props.Capital}</td>

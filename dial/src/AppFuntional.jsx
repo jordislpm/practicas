@@ -4,10 +4,11 @@ import Form from './assets/components/Practica IV/Form';
 import Tabla from './assets/components/Practica IV/Tabla';
 import Notas from './assets/components/Practica IV/Notas';
 import Foot from './assets/components/Practica IV/Foot';
+import InteresFijo from './assets/components/Practica IV/InteresFijo';
 
 
 function AppFuntional (){
-
+    
     const arr = [];
     const[notas,setNotas] = useState([
       {nota:"Los resultados de esta simulación son aproximados.",
@@ -19,6 +20,8 @@ function AppFuntional (){
           nota:"En caso de préstamos hipotecarios, la cuota mensual aumentaría producto del seguro de vida y de propiedad, no incluidos en el cálculo.",
         }
     ])
+
+    const [interesFijo, setInteresFijo] = useState('0')
 
     const [monto, setMonto] = useState(0)
     
@@ -63,7 +66,7 @@ function AppFuntional (){
     id: `${i +1}`,
     key: `clave${i+1}`,
     Mes:`${i+1}`,
-    Cuota: `${C}`,
+    Cuota: `${new Intl.NumberFormat('es-MX').format(C)}`,
     Capital: capital,
     Interes: interes,
     Balance: balance
@@ -78,47 +81,43 @@ function AppFuntional (){
     balance = 0
   }
   arr.push(newMes)
-      }  
+      }
       setMeses([...arr])
       setInteresAnual(0)
       setMonto(0)
       setCuota(0)
-      ;
+      setInteresFijo(`${C}`)
+      
     }
        
 
     
 
     return(
-    <div className="row justify-content-lg-center bg-light text-dark">
+    <div className="row justify-content-lg-center bg-light text-dark pt-4">
       <di>
       <h2 className="h2 text-center">Calculadora Financiera de Cuotas de prestamos</h2>
       </di>
-      <div className="row mt-3 px-0 mx-0">
-      <div className="col my-2 mx-4 bg-dark text-white" >
-      <Form 
-        cuota={cuota}
-        monto={monto} 
-        interesAnual={interesAnual}
-        createMes={createMes}
-        handleMonto={handleMonto} 
-        handleCuota={handleCuota}
-        handleInteresAnual={handleInteresAnual}/>
-      </div>
-      <div className="col mx-4 bg-light text-dark">
-      <Notas notas={notas}/>
-      </div>
+      <div className="row mt-3 mb-4 px-0 mx-0">
+        <div className="col my-2 mx-4 bg-dark text-white border border-primary rounded" >
+        <Form 
+          cuota={cuota}
+          monto={monto} 
+          interesAnual={interesAnual}
+          createMes={createMes}
+          handleMonto={handleMonto} 
+          handleCuota={handleCuota}
+          handleInteresAnual={handleInteresAnual}/>
+        </div>
+        <div className="col mx-4 bg-light text-dark pt-2">
+        <Notas notas={notas}/>
+        {meses.length > 0 && <InteresFijo interesFijo={meses[0].Cuota}/>}
+        </div>
     </div>
-
-     
-     <div className="bg-dark text-white">
+    <div className="justify-content-center me-0 px-5 mt-2">
    {meses.length > 0 && <Tabla meses={meses}/>}
    {meses.length <= 0 && <Foot/>}
-   
      </div>
-      
-      
-  
     </div>
     )
 
