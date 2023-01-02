@@ -21,6 +21,12 @@ function AppFuntional (){
         }
     ])
 
+    function separator(numb) {
+      var str = numb.toString().split(".");
+      str[0] = str[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return str.join(".");
+  }
+
     const [interesFijo, setInteresFijo] = useState('0')
 
     const [monto, setMonto] = useState(0)
@@ -66,10 +72,10 @@ function AppFuntional (){
     id: `${i +1}`,
     key: `clave${i+1}`,
     Mes:`${i+1}`,
-    Cuota: `${new Intl.NumberFormat('es-MX').format(C)}`,
-    Capital: capital,
-    Interes: interes,
-    Balance: balance
+    Cuota: `${separator(C)}`,
+    Capital: separator(capital),
+    Interes: separator(interes),
+    Balance: separator(balance)
      };
   
   
@@ -114,7 +120,7 @@ function AppFuntional (){
         {meses.length > 0 && <InteresFijo interesFijo={meses[0].Cuota}/>}
         </div>
     </div>
-    <div className="justify-content-center me-0 px-5 mt-2">
+    <div className="justify-content-center me-0 px-5 mt-2 pb-4">
    {meses.length > 0 && <Tabla meses={meses}/>}
    {meses.length <= 0 && <Foot/>}
      </div>
