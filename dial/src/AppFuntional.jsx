@@ -50,6 +50,11 @@ function AppFuntional (){
     const [meses,setMeses] = useState([...arr]);
 
     const createMes = (e)=>{
+
+      if(monto > 0 && cuota > 0 && interesAnual > 0){
+
+
+     
       setMeses([])
       e.preventDefault()
         let V = monto;
@@ -61,8 +66,7 @@ function AppFuntional (){
         let balance = (V - capital).toFixed(2);
         let interes = interesMensual.toFixed(2);
         const interesPorc = (interesMensual * 0.01);
-        console.log(interesPorc)
-        console.log(interesMensual)
+   
        
         
   for (let i = 0; i < cuota; i++) {
@@ -93,6 +97,8 @@ function AppFuntional (){
       setMonto(0)
       setCuota(0)
       setInteresFijo(`${C}`)
+
+    }
       
     }
        

@@ -1,6 +1,6 @@
-export default function Nota (props){
+export default function Nota ({nota}){
     return(
-        <li className="list-group-item">{props.nota}</li>
+        <li className="list-group-item">{nota}</li>
     )
 }
 
