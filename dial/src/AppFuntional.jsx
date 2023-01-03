@@ -98,7 +98,9 @@ function AppFuntional (){
       setCuota(0)
       setInteresFijo(`${C}`)
 
-    }
+    } else(
+      alert(" Para hacer el calculo todos los campos deben tener valores")
+    )
       
     }
        
