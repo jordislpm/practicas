@@ -5,7 +5,7 @@ import Tabla from './assets/components/Practica IV/Tabla';
 import Notas from './assets/components/Practica IV/Notas';
 import Foot from './assets/components/Practica IV/Foot';
 import InteresFijo from './assets/components/Practica IV/InteresFijo';
-
+import CalculadoraDeInteres from './assets/components/Practica IV/CalculadoraDeInteres';
 
 function AppFuntional (){
     
@@ -109,6 +109,7 @@ function AppFuntional (){
 
     return(
     <div className="row justify-content-lg-center bg-light text-dark pt-4">
+      <CalculadoraDeInteres/>
       <di>
       <h2 className="h2 text-center">Calculadora Financiera de Cuotas de prestamos</h2>
       </di>
