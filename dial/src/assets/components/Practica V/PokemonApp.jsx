@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react"
-import Modal from "./Modal";
 import "./pokeStyles.css"
 import PokemonList from "./PokemonList";
 import PokeHeader from "./PokeHeader";
@@ -8,6 +7,19 @@ import PokemonPage from "./PokemonPage";
 
 
 function PokemonApp(){
+
+    const [img, setImg] = useState([
+        {
+          url:"https://wallpaper.dog/large/749981.jpg"
+        },
+        {
+          url: "https://wallpaper.dog/large/20352460.jpg"
+        },
+        {
+            url: "https://wallpapers.com/images/hd/pikachu-with-pokemon-friends-uxxa8pvbvsqj0v3h.jpg"
+          }
+      ])
+
     const[pokemonData, setPokemonData] = useState([]);
     const[pokeDex,setPokeDex]=useState();
     const[url,setUrl]= useState("https://pokeapi.co/api/v2/pokemon?limit=20&offset=0")
@@ -16,6 +28,8 @@ function PokemonApp(){
     const[loading,setLoading]=useState(true)
     const[allPokemons, setAllPokemons] = useState([])
     const [modal, setModal] = useState(false);
+    const[fondo, setFondo] = useState(img[0].url)
+    const [busqueda, setBusqueda] = useState(false)
 
   const toggleModal = () => {
     setModal(!modal);
@@ -63,26 +77,31 @@ function PokemonApp(){
         })
     }
 
+    const backgroundChange = ()=>{
+        const backGround = document.getElementById("pokeBody")
+        setInterval(()=>{
+
+            const num = img[Math.floor(Math.random()*img.length)]
+            setFondo(num.url)
+            
+        },10000)
+    }
+
     useEffect(()=>{
-        console.log(pokeDex)
-        console.log()
+    
         loadData();
+        backgroundChange()
 
     },[url])
 
  
+    useEffect(()=>{
+    
+        loadAllData();
+       
 
-    const [img, setImg] = useState([
-        {
-          url:"https://wallpaper.dog/large/749981.jpg"
-        },
-        {
-          url: "https://wallpaper.dog/large/20352460.jpg"
-        },
-        {
-            url: "https://wallpapers.com/images/hd/pikachu-with-pokemon-friends-uxxa8pvbvsqj0v3h.jpg"
-          }
-      ])
+    },[url])
+    
 
     const [find, setfind] = useState();
 
@@ -100,13 +119,11 @@ function PokemonApp(){
         
     }
 
- console.log(`esta es la pokedex`)
- console.log(pokeDex)
- console.log(`esta es la pokedex`)
+ 
 
     return(
         
-        <div style={{ backgroundImage: `url(${img[0].url})`}}>
+        <div id="pokeBody" className="pokeBody" style={{ background: `url(${fondo})`}}>
         <PokeHeader 
         handleFind={handleFind}
         submitFind={submitFind}
