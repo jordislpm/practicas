@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import AppFuntional from './AppFuntional'
-import CalculadoraDeInteres from './assets/components/Practica IV/CalculadoraDeInteres'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css'
+import PokemonApp from './assets/components/Practica V/PokemonApp'
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <CalculadoraDeInteres/>
-  </React.StrictMode>,
+    <PokemonApp/>
+  </React.StrictMode>
 )
