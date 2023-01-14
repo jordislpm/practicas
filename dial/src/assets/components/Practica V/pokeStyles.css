@@ -34,6 +34,17 @@
     min-height: 1200px;
 }
 
+/* header*/
+
+.search{
+    position: relative;
+}
+.btn-danger{
+    position: absolute;
+    bottom: 12%;
+    left: 40%;
+}
+
 .container{
     display: flexbox;
 }
@@ -246,4 +257,19 @@ position: absolute;
     color: var(--poke-blue);
     background-color: var(--poke-yellow);
 
+}
+
+
+/* No encontrado*/
+
+.dontFind{
+    font-size: x-large;
+    display: flex;
+    padding: 80px;
+    justify-content: center;
+    text-align: center;
+    color: var(--poke-yellow);
+    background-color: var(--poke-blue);
+    min-width: 100%;
+    height: 200px;
 }

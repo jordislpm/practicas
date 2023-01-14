@@ -19,6 +19,9 @@ return(
                      submitFind={props.submitFind}/>
                 </div>
            </div>
+           {props.busqueda && <div className="btn-clear-find">
+                 <button className="btn btn-danger" onClick={props.clearSearch}>Clear search</button>
+            </div>}
         </div>
 )
 }

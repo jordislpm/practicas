@@ -8,7 +8,7 @@ export default function Find ( {submitFind, handleFind, find} ){
                         <input 
                         value={find}
                         className="form-control me-2" 
-                        type="search" 
+                        type="text" 
                         placeholder="Ex: Gengar" 
                         aria-label="Buscar"
                         onChange={handleFind}/>

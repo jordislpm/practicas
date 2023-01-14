@@ -4,7 +4,7 @@ import { DotSpinner } from '@uiball/loaders'
 
 
 
-export default function PokemonList({setPokemonData, pokemonData, loading, infoPokemon, setUrl, nextUrl, prevUrl}) {
+export default function PokemonList({busqueda, setPokemonData, pokemonData, loading, infoPokemon, setUrl, nextUrl, prevUrl}) {
     
     
     return(
@@ -24,16 +24,15 @@ export default function PokemonList({setPokemonData, pokemonData, loading, infoP
                 />
                 </button>
             })}
-            <div className="btn-group">
+        </div>
+        {!busqueda && <div className="btn-group">
                 { prevUrl && <button onClick={()=>{
                     setPokemonData([])
                     setUrl(prevUrl)}}>Previous</button>}
                 <button onClick={()=>{
                     setPokemonData([])
                     setUrl(nextUrl)}}>Next</button>
-            </div>
-            
-        </div>
+            </div>}
         </>
     )
 }
