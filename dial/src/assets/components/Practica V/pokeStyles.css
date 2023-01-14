@@ -31,7 +31,8 @@
     margin: 0px;
     padding: 0px;
     min-width: 100%;
-    min-height: 1200px;
+    min-height: 650px;
+    padding-bottom: 25px;
 }
 
 /* header*/
@@ -100,10 +101,9 @@ position: absolute;
 .main-pokemon{
     position: relative;
     padding: 30px;
-   margin-bottom: 20px;
+    margin-bottom: 0px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 50px;
     background-color: rgba(42, 117, 187, 0.90);
 }
 

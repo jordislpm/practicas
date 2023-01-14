@@ -98,7 +98,7 @@ function PokemonApp(){
     
 
     async function loadAllData (){
-        const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${50}&offset=0`);
+        const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${allpage}&offset=0`);
                 
         getAllPokemon(resp.data.results)
                 
@@ -114,8 +114,6 @@ function PokemonApp(){
                 state = state.filter(o => hash[o.id] ? false : hash[o.id] = true);
                 state = state.filter(pokemon=>{
                     if(pokemon.name.includes(find.toLowerCase())){
-                        console.log(typeof(pokemon.name))
-                        console.log(typeof(pokemon.id))
 
                         return pokemon
                     }else if(pokemon.id == (Math.floor(find))){
@@ -125,20 +123,16 @@ function PokemonApp(){
                 })
                 return state
             })
-            console.log(pokemonData.length)
-            
-            
-            console.log(`Si es un texto? ${typeof find === 'string'}`)
-            console.log(`Si es un numero? `)
+           
         })
     }
 
     function clearSearch (){
-        setBusqueda(false)
-        setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${page20}&offset=0`)
-        setPokemonData([])
-        loadData()
-        setFind("")
+        setFind("");
+        setBusqueda(false);
+        setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${page20}&offset=0`);
+        setPokemonData([]);
+
        
     }
 
@@ -156,21 +150,16 @@ function PokemonApp(){
         if(busqueda == false){
         setPokemonData([])
         loadData();
-        backgroundChange()
+       
        
         } else if(busqueda == true){
             loadAllData();
-            backgroundChange()
+        
            
             }
     },[url])
 
- 
-    useEffect(()=>{
 
-    
-       
-     },[url])
     
 
     
@@ -188,7 +177,6 @@ function PokemonApp(){
         busqueda={busqueda}
         clearSearch={clearSearch}
         />
-        {pokemonData.length <= 0 && <div className="dontFind"><span>This pokemon does not exist, try another one.</span></div>}
         {!modal && <PokemonList 
         pokemonData={pokemonData} 
         loading={loading} 
@@ -200,6 +188,7 @@ function PokemonApp(){
         nextUrl={nextUrl}
         setPokemonData={setPokemonData}
         busqueda={busqueda}/>}
+{pokemonData.length <= 0 && <div className="dontFind"><span>This pokemon does not exist, try another one.</span></div>}
         {modal && <PokemonPage data={pokeDex} setPokeDex={()=>{
             setPokeDex("")
             toggleModal()}}/>}
