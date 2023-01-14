@@ -9,6 +9,14 @@ export default function PokemonList({busqueda, setPokemonData, pokemonData, load
     
     return(
         <>
+        {!busqueda && <div className="btn-group">
+                { prevUrl && <button onClick={()=>{
+                    setPokemonData([])
+                    setUrl(prevUrl)}}>Previous</button>}
+                <button onClick={()=>{
+                    setPokemonData([])
+                    setUrl(nextUrl)}}>Next</button>
+            </div>}
         <div className="card-list-pokemon container">
 
             {loading ? <><h2>Loading...</h2><DotSpinner/></> : pokemonData.map((pk, i)=>{
