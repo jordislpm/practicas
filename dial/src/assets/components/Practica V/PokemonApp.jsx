@@ -129,7 +129,6 @@ function PokemonApp(){
             setBusqueda(false);
             setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${page20}&offset=0`);
             setPokemonData([]);
-            console.log("vacio")
             setClear(false)
     }
 
