@@ -58,14 +58,7 @@ function PokemonApp(){
             setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${allpage}&offset=0`)
             
             loadAllData()
-            
-            
-
         }
-
-        
-        
-
     }
 
 
@@ -102,9 +95,7 @@ function PokemonApp(){
     async function loadAllData (){
         const resp = await axios.get(`https://pokeapi.co/api/v2/pokemon?limit=${allpage}&offset=0`);
                 
-        getAllPokemon(resp.data.results)
-                
-                
+        getAllPokemon(resp.data.results)     
     }
 
     async function getAllPokemon(res){
@@ -134,7 +125,8 @@ function PokemonApp(){
         setBusqueda(false);
         setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${page20}&offset=0`);
         setPokemonData([]);
-
+        loadData();
+        
        
     }
 
