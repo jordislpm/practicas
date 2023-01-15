@@ -33,6 +33,7 @@ function PokemonApp(){
     const[fondo, setFondo] = useState(img[0].url)
     const [busqueda, setBusqueda] = useState(false)
     const [find, setFind] = useState("");
+    const[clear, setClear]= useState(false)
 
     function handleFind(e){
         
@@ -54,10 +55,12 @@ function PokemonApp(){
             setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${page20}&offset=0`)
             setPokemonData([])
             loadData()
+            setClear(true)
         }else if (busqueda ==true){
             setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${allpage}&offset=0`)
             
             loadAllData()
+            setClear(true)
         }
     }
 
@@ -121,13 +124,13 @@ function PokemonApp(){
     }
 
     function clearSearch (){
-        setFind("");
-        setBusqueda(false);
-        setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${page20}&offset=0`);
-        setPokemonData([]);
-        loadData();
         
-       
+            setFind("");
+            setBusqueda(false);
+            setUrl(`https://pokeapi.co/api/v2/pokemon?limit=${page20}&offset=0`);
+            setPokemonData([]);
+            console.log("vacio")
+            setClear(false)
     }
 
     function backgroundChange(){
@@ -170,6 +173,7 @@ function PokemonApp(){
         find={find}
         busqueda={busqueda}
         clearSearch={clearSearch}
+        clear={clear}
         />
         {!modal && <PokemonList 
         pokemonData={pokemonData} 
