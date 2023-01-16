@@ -134,15 +134,13 @@ function PokemonApp(){
 
     function backgroundChange(){
         const backGround = document.getElementById("pokeBody")
-        setInterval(()=>{
-
             const num = img[Math.floor(Math.random()*img.length)]
             setFondo(num.url)
-            
-        },10000)
     }
 
+
     useEffect(()=>{
+        backgroundChange()
         if(busqueda == false){
         setPokemonData([])
         loadData();
