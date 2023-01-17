@@ -31,19 +31,19 @@ function CalculadoraDeInteres (){
 
     const [interesFijo, setInteresFijo] = useState('0')
 
-    const [monto, setMonto] = useState(0)
+    const [monto, setMonto] = useState([])
     
       const handleMonto = (e)=>{
         setMonto(e.target.value)
       };
     
-    const [interesAnual,setInteresAnual] = useState(0)
+    const [interesAnual,setInteresAnual] = useState([])
 
      const handleInteresAnual = (e)=>{
         setInteresAnual(e.target.value)
       };
     
-    const [cuota,setCuota] = useState(0)
+    const [cuota,setCuota] = useState([])
     
       const handleCuota = (e)=>{
         setCuota(e.target.value)
