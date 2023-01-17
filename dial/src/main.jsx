@@ -9,6 +9,6 @@ import CalculadoraDeInteres from './assets/components/Practica IV/CalculadoraDeI
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <PokemonApp/>
+    <CalculadoraDeInteres/>
   </React.StrictMode>
 )

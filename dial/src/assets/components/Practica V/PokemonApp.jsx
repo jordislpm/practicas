@@ -172,7 +172,7 @@ function PokemonApp(){
         clearSearch={clearSearch}
         clear={clear}
         />
-        {!modal && <PokemonList 
+        {modal ? <div className="div-reyeno"></div>: <PokemonList 
         pokemonData={pokemonData} 
         loading={loading} 
         infoPokemon={poke=>{setPokeDex(poke)
