@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect , useLayoutEffect} from "react"
 import "./pokeStyles.css"
 import PokemonList from "./PokemonList";
 import PokeHeader from "./PokeHeader";
@@ -139,7 +139,7 @@ function PokemonApp(){
     }
 
 
-    useEffect(()=>{
+    useLayoutEffect(()=>{
         backgroundChange()
         if(busqueda == false){
         setPokemonData([])
