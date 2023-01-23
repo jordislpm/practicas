@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import React from 'react';
 import Mes from './Mes';
-function Tabla(props){
+function Tabla({meses}){
 
  
 
@@ -17,7 +17,7 @@ function Tabla(props){
               </tr>
             </thead>
             <tbody>
-            {props.meses.map((me) => {
+            {meses.map((me) => {
               return <Mes 
               key={`${me.key}`}
               id={me.id}

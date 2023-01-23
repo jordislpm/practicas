@@ -156,7 +156,7 @@ function PokemonApp(){
 
     
 
-    
+    console.log(pokemonData)
 
     
  

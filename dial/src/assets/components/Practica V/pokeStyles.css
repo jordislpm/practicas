@@ -17,7 +17,7 @@
 	--color-fighting: #d56723;
 	--color-dark: #707070;
 	--color-bug: #729f3f;
-	--color-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+	--color-dragon: #6F35FC;
 	--color-electric: #bba909;
 	--color-fairy: #fdb9e9;
 	--color-shadow: #7b62a3;
@@ -88,6 +88,109 @@ body{
 .card-pokemon:hover{
     background-color:var(--poke-yellow);
     color: var(--poke-blue);
+}
+
+.card-img > img, .container-img-pokemon > img{
+    float: inline-start;
+    animation: movimiento 2.5s linear infinite;
+}
+
+@keyframes movimiento {
+
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+    
+}
+
+.card-type{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    display: inline-block;
+    border: #000000;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 15px;
+    margin: 2px;
+    padding: 2px;
+    color: white;
+    margin-bottom: 7px;
+}
+	
+.ghost{
+    background-color: var(--color-ghost)  
+}
+.fighting{
+    background-color: var(--color-fighting)  
+}
+
+.rock{
+    background-color: var(--color-rock)  
+}
+.ice{
+    background-color: var(--color-ice)  
+}	
+	
+.psychic{
+    background-color: var(--color-psychic)  
+}	
+	
+.fairy{
+        background-color: var(--color-fairy)
+}
+
+.dragon{
+        background-color: var(--color-dragon)
+}
+
+.fire{
+    background-color: var(--color-fire)
+}
+
+.dark{
+    background-color: var(--color-dark)
+}
+
+.normal{
+    background-color: var(--color-normal);
+}
+.flying{
+    background-color: var(--color-flying);
+}
+
+.electric{
+    background-color: var(--color-electric);
+}
+
+.grass{
+    background-color: var(--color-grass);
+}
+
+.ground{
+    background-color: var(--color-ground);
+}
+
+.bug{
+    background-color: var(--color-bug);
+}
+
+.water{
+    background-color: var(--color-water);
+}
+
+.poison{
+    background-color:var(--color-poison);
+}
+
+.steel{
+    background-color:var(--color-steel)
 }
 
 /* PokemonPage */

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from './Form';
 import Tabla from './Tabla';
@@ -11,7 +11,7 @@ import './calculadoraDeInteres.css'
 
 function CalculadoraDeInteres (){
     
-    const arr = [];
+    
     const[notas,setNotas] = useState([
       {nota:"Los resultados de esta simulación son aproximados.",
         },{
@@ -38,6 +38,15 @@ function CalculadoraDeInteres (){
       };
     
     const [interesAnual,setInteresAnual] = useState([])
+    const [mes,setMes]= useState({
+        id: null,
+        key: null,
+        Mes: null,
+        Cuota:  null,
+        Capital:  null,
+        Interes:  null,
+        Balance:  null}
+    )
 
      const handleInteresAnual = (e)=>{
         setInteresAnual(e.target.value)
@@ -49,9 +58,10 @@ function CalculadoraDeInteres (){
         setCuota(e.target.value)
       };
 
-    const [meses,setMeses] = useState([...arr]);
+    const [meses,setMeses] = useState([]);
 
     const createMes = (e)=>{
+      const arr = [...meses];
 
       if(monto > 0 && cuota > 0 && interesAnual > 0){
 
@@ -93,18 +103,19 @@ function CalculadoraDeInteres (){
   if(balance < 1){
     balance = 0
   }
+  setMes
   arr.push(newMes)
       }
-      setMeses([...arr])
-      setInteresAnual(0)
-      setMonto(0)
-      setCuota(0)
-      setInteresFijo(`${C}`)
+      
 
     } else(
       alert("Para hacer el calculo todos los campos deben tener valores.")
     )
-      
+      setMeses([...arr])
+      setInteresAnual(0)
+      setMonto(0)
+      setCuota(0)
+      setInteresFijo(meses[0].interesFijo) 
     }
        
 

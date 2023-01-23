@@ -33,7 +33,7 @@ export default function PokemonPage ({data, setPokeDex}){
                         <>
                         <span>Type: </span>
                         {data.types.map((type, i)=>{
-                            return <span key={i} className="grass">"{type.type.name}" </span>
+                            return <span key={i} className={`card-type ${type.type.name}`}>"{type.type.name}" </span>
                         })}</>
 						
 					</div>

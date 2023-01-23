@@ -29,6 +29,7 @@ export default function PokemonList({busqueda, setPokemonData, pokemonData, load
                 name={pk.name}
                 id={pk.id}
                 img={pk.sprites.front_default}
+                types={pk.types}
                 />
                 </button>
             })}

@@ -16,6 +16,11 @@ export default function PokeCard (props){
 						alt="pokemon venusaur"
                         />
 				</div>
+				<div>
+				{props.types.map((type, i)=>{
+                            return <span key={i} className={`card-type ${type.type.name}`}>"{type.type.name}" </span>
+                        })}
+				</div>
             </>
     )
 }
