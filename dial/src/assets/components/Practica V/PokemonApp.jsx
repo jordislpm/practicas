@@ -4,7 +4,7 @@ import PokemonList from "./PokemonList";
 import PokeHeader from "./PokeHeader";
 import axios from "axios";
 import PokemonPage from "./PokemonPage";
-import Business from "../Practica III/Business";
+import DontFind from "./DontFind";
 
 
 function PokemonApp(){
@@ -140,7 +140,6 @@ function PokemonApp(){
 
 
     useLayoutEffect(()=>{
-        backgroundChange()
         if(busqueda == false){
         setPokemonData([])
         loadData();
@@ -153,10 +152,6 @@ function PokemonApp(){
             }
     },[url])
 
-
-    
-
-    console.log(pokemonData)
 
     
  
@@ -183,7 +178,7 @@ function PokemonApp(){
         nextUrl={nextUrl}
         setPokemonData={setPokemonData}
         busqueda={busqueda}/>}
-{pokemonData.length <= 0 && <div className="dontFind"><span>This pokemon does not exist, try another one.</span></div>}
+{pokemonData.length <= 0 && busqueda ? <DontFind/> : ""}
         {modal && <PokemonPage data={pokeDex} setPokeDex={()=>{
             setPokeDex("")
             toggleModal()}}/>}

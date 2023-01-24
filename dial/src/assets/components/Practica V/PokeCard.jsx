@@ -1,24 +1,25 @@
 
 
 
-export default function PokeCard (props){
+export default function PokeCard ({id,name,img,types}){
     return (
             <>
 				<div className="card-info">
-					<span className="pokemon-id">No.{props.id}</span>
-					<h3>{(props.name).charAt(0).toUpperCase() + (props.name).slice(1)}</h3>
+					<span className="pokemon-id">No.{id}</span>
+					<h3>{(name).charAt(0).toUpperCase() + (name).slice(1)}</h3>
 					<div className="card-types">
 					</div>
 				</div>
                 <div className="card-img">
 					<img
-						src={props.img}
-						alt="pokemon venusaur"
+						src={img}
+						alt={name}
                         />
 				</div>
 				<div>
-				{props.types.map((type, i)=>{
-                            return <span key={i} className={`card-type ${type.type.name}`}>"{type.type.name}" </span>
+				{types.map((type, i)=>{
+                            return <span key={i} className={`card-type ${type.type.name}`}>
+								{(type.type.name).charAt(0).toUpperCase() + (type.type.name).slice(1)} </span>
                         })}
 				</div>
             </>
