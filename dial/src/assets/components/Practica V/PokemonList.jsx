@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react"
 import PokeCard from "./PokeCard"
 import { DotSpinner } from '@uiball/loaders'
+import Loading from "./Loading"
 
 
 
 export default function PokemonList({busqueda, setPokemonData, pokemonData, loading, infoPokemon, setUrl, nextUrl, prevUrl}) {
     
-    
+    console.log(pokemonData.length)
     return(
-        <>
+        <div className="PokeList">
         {!busqueda && <div className="btn-group">
                 { prevUrl && <button onClick={()=>{
                     setPokemonData([])
@@ -19,19 +20,17 @@ export default function PokemonList({busqueda, setPokemonData, pokemonData, load
             </div>}
         <div className="card-list-pokemon container">
 
-            {loading ? <><h2>Loading...</h2><DotSpinner/></> : pokemonData.map((pk, i)=>{
-                return <button 
-                className="card-pokemon" 
-                key={pk.id} 
-                onClick={()=>infoPokemon(pk)}>
-                     <PokeCard
+            {!loading && pokemonData.length <20 ? <><Loading/></> : pokemonData.map((pk, i)=>{
+                return <PokeCard
+                     infoPokemon={infoPokemon}
                 key={pk.id}
                 name={pk.name}
                 id={pk.id}
                 img={pk.sprites.front_default}
                 types={pk.types}
+                pk={pk}
                 />
-                </button>
+        
             })}
         </div>
         {!busqueda && <div className="btn-group">
@@ -42,19 +41,14 @@ export default function PokemonList({busqueda, setPokemonData, pokemonData, load
                     setPokemonData([])
                     setUrl(nextUrl)}}>Next</button>
             </div>}
-        </>
+        </div>
     )
 }
 
 
 
 
-<DotSpinner 
-className="container-loader"
- size={40}
- speed={0.9} 
- color="black" 
-/>
+
 
 
 

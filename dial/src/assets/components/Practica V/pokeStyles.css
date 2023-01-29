@@ -400,3 +400,13 @@ position: absolute;
     height: 200px;
 }
 
+
+.PokeList{
+    min-height: 85rem;
+}
+
+.loading{
+    min-height: 85rem;
+    padding: 20rem;
+}
+
