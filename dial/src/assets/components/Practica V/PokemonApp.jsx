@@ -72,6 +72,7 @@ function PokemonApp(){
   };
 
   async function loadData(){
+
         const resp = await axios.get(`${url}`);
                 setNextUrl(resp.data.next)
                 setPrevUrl(resp.data.previous)
@@ -167,7 +168,7 @@ function PokemonApp(){
         clearSearch={clearSearch}
         clear={clear}
         />
-        {modal ? <div className="div-reyeno"></div>: <PokemonList 
+        {modal && pokemonData.length > 19 ? <div className="div-reyeno"></div>: <PokemonList 
         pokemonData={pokemonData} 
         loading={loading} 
         infoPokemon={poke=>{setPokeDex(poke)
